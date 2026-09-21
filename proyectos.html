@@ -5,56 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyectos - Aura Seating</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 
 <body>
 
-    <header>
-        <img src="../img/logo.jpg" alt="Logo de Aura Seating">
-        <h1>Aura Seating</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="sobre-mi.html">Sobre mí</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="proyectos.html">Proyectos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+    <header class="site-header">
+        <img src="../img/logo.jpg" alt="Logo de Aura Seating" class="logo-img">
+        <p class="brand-title">Aura Seating</p>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                <li><a href="sobre-mi.html" class="nav-link">Sobre mí</a></li>
+                <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+                <li><a href="proyectos.html" class="nav-link active">Proyectos</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="main-content">
         <section>
-            <h2>Proyectos Realizados</h2>
-
+            <h1 class="main-title">Proyectos Realizados</h1>
             <article>
-
-                <p>Conoce algunos de los proyectos de equipamiento que hemos llevado a cabo para clientes y salas de
-                    eSports.</p>
-
+                <p class="text-body">Conoce algunos de los proyectos de equipamiento que hemos llevado a cabo para
+                    clientes y salas de eSports.</p>
             </article>
         </section>
 
         <section>
-            <h3>Instalaciones Destacadas</h3>
+            <h2>Instalaciones Destacadas</h2>
             <article>
                 <h3>Equipamiento Sala Gamer eSports</h3>
-                <p>Instalación de 10 sillas ergonómicas especializadas para competencias de alto nivel.</p>
+                <p class="text-body">Instalación de 10 sillas ergonómicas especializadas para competencias de alto
+                    nivel.</p>
             </article>
-            <figure>
+            <figure class="media-container">
                 <img src="../img/proyectos-oficina.jpg"
-                    alt="Sala de oficinas totalmente equipada con sillas ergonómicas">
-                <figcaption>Proyecto de renovación de oficina ejecutiva.</figcaption>
+                    alt="Sala de oficinas totalmente equipada con sillas ergonómicas" class="media-img">
+                <figcaption class="media-caption">Proyecto de renovación de oficina ejecutiva.</figcaption>
             </figure>
         </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 Aura Seating. Todos los derechos reservados.</p>
         <ul>
-            <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
-            <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
         </ul>
     </footer>
 

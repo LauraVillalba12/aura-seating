@@ -1,0 +1,167 @@
+/* ==========================================
+   1. RESET Y CONFIGURACIÓN GENERAL
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121214;
+    color: #f4f4f6;
+    font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   2. TIPOGRAFÍA Y JERARQUÍA VISUAL
+   ========================================== */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.main-title, h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #00e676;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid #1e1e24;
+    padding-bottom: 0.3rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: #a0a0b0;
+    margin-top: 1rem;
+}
+
+.text-body, p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #d0d0d8;
+    margin-bottom: 1rem;
+}
+
+/* ==========================================
+   3. ENCABEZADO Y NAVEGACIÓN
+   ========================================== */
+.site-header, header {
+    background-color: #1e1e24;
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid #00e676;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.brand-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #00e676;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.logo-img {
+    max-width: 160px;
+    height: auto;
+}
+
+.nav-list, nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link, nav a {
+    color: #f4f4f6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-link:hover, nav a:hover {
+    color: #00e676;
+}
+
+/* ==========================================
+   4. CONTENIDO PRINCIPAL Y SECCIONES
+   ========================================== */
+.main-content, main {
+    padding: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: #1a1a20;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+}
+
+article {
+    background-color: #24242c;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 0.8rem;
+}
+
+/* ==========================================
+   5. IMÁGENES Y MULTIMEDIA
+   ========================================== */
+.media-container, figure {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.media-img, figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #33333d;
+}
+
+.media-caption, figcaption {
+    font-size: 0.85rem;
+    color: #a0a0b0;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* ==========================================
+   6. PIE DE PÁGINA (FOOTER)
+   ========================================== */
+.site-footer, footer {
+    background-color: #0a0a0c;
+    padding: 1.5rem;
+    text-align: center;
+    color: #a0a0b0;
+    font-size: 0.9rem;
+    border-top: 1px solid #1e1e24;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 0.5rem;
+}
+
+footer a {
+    color: #00e676;
+    text-decoration: none;
+}

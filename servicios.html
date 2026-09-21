@@ -5,61 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios - Aura Seating</title>
-    <link rel="stylesheet" href="styles/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 
 <body>
 
-    <header>
-        <img src="../img/logo.jpg" alt="Logo de Aura Seating">
-        <p>Aura Seating</p>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="sobre-mi.html">Sobre mí</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="proyectos.html">Proyectos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+    <header class="site-header">
+        <img src="../img/logo.jpg" alt="Logo de Aura Seating" class="logo-img">
+        <p class="brand-title">Aura Seating</p>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                <li><a href="sobre-mi.html" class="nav-link">Sobre mí</a></li>
+                <li><a href="servicios.html" class="nav-link active">Servicios</a></li>
+                <li><a href="proyectos.html" class="nav-link">Proyectos</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="main-content">
         <section>
-
-            <h1>Nuestros Servicios</h1>
-
+            <h1 class="main-title">Nuestros Servicios</h1>
             <article>
-
-                <p>Brindamos soluciones integrales en equipamiento ergonómico para particulares y empresas.</p>
-
+                <p class="text-body">Brindamos soluciones integrales en equipamiento ergonómico para particulares y
+                    empresas.</p>
             </article>
-
         </section>
 
         <section>
             <h2>Catálogo de Servicios</h2>
             <article>
                 <h3>Venta y Asesoramiento Gamer</h3>
-                <p>Te ayudamos a elegir la silla que mejor se adapta a tu altura y peso para tus jornadas de juego.</p>
+                <p class="text-body">Te ayudamos a elegir la silla que mejor se adapta a tu altura y peso para tus
+                    jornadas de juego.</p>
             </article>
             <article>
                 <h4>Equipamiento de Oficinas Ejecutivas</h4>
-                <p>Asesoramiento corporativo para empresas que buscan renovar la ergonomía de sus puestos de trabajo.
-                </p>
+                <p class="text-body">Asesoramiento corporativo para empresas que buscan renovar la ergonomía de sus
+                    puestos de trabajo.</p>
             </article>
-            <figure>
-                <img src="../img/silla-gamer.jpg" alt="Silla gamer ergonómica de color rojo y negro">
-                <figcaption>Silla gamer Aura Edition para máxima comodidad.</figcaption>
+            <figure class="media-container">
+                <img src="../img/silla-gamer.jpg" alt="Silla gamer ergonómica de color rojo y negro" class="media-img">
+                <figcaption class="media-caption">Silla gamer Aura Edition para máxima comodidad.</figcaption>
             </figure>
         </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 Aura Seating. Todos los derechos reservados.</p>
         <ul>
-            <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
-            <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
         </ul>
     </footer>
 
