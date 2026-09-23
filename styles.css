@@ -19,19 +19,19 @@ body {
    2. TIPOGRAFÍA Y JERARQUÍA VISUAL
    ========================================== */
 h1, h2, h3, h4 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
     color: #ffffff;
     font-weight: 700;
 }
 
-.main-title, h1 {
+.main-title {
     font-size: 2.5rem;
     font-weight: 800;
     color: #00e676;
     margin-bottom: 1rem;
 }
 
-h2 {
+.section-title {
     font-size: 1.8rem;
     margin-top: 1.5rem;
     margin-bottom: 0.8rem;
@@ -39,13 +39,13 @@ h2 {
     padding-bottom: 0.3rem;
 }
 
-h3 {
+.sub-title {
     font-size: 1.3rem;
     color: #a0a0b0;
     margin-top: 1rem;
 }
 
-.text-body, p {
+.text-body {
     font-size: 1rem;
     font-weight: 400;
     color: #d0d0d8;
@@ -55,7 +55,7 @@ h3 {
 /* ==========================================
    3. ENCABEZADO Y NAVEGACIÓN
    ========================================== */
-.site-header, header {
+.site-header {
     background-color: #1e1e24;
     padding: 1.5rem 2rem;
     border-bottom: 2px solid #00e676;
@@ -67,12 +67,11 @@ h3 {
 }
 
 .brand-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
     color: #00e676;
     text-align: center;
-    flex-grow: 1;
 }
 
 .logo-img {
@@ -80,39 +79,40 @@ h3 {
     height: auto;
 }
 
-.nav-list, nav ul {
+.nav-list {
     list-style: none;
     display: flex;
     gap: 15px;
 }
 
-.nav-link, nav a {
+.nav-link {
     color: #f4f4f6;
     text-decoration: none;
     font-weight: 500;
 }
 
-.nav-link:hover, nav a:hover {
+.nav-link:hover,
+.nav-link.active {
     color: #00e676;
 }
 
 /* ==========================================
    4. CONTENIDO PRINCIPAL Y SECCIONES
    ========================================== */
-.main-content, main {
+.main-content {
     padding: 2rem;
     max-width: 1100px;
     margin: 0 auto;
 }
 
-section {
+.content-section {
     background-color: #1a1a20;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border-radius: 8px;
 }
 
-article {
+.card-article {
     background-color: #24242c;
     padding: 1rem;
     border-radius: 6px;
@@ -122,19 +122,19 @@ article {
 /* ==========================================
    5. IMÁGENES Y MULTIMEDIA
    ========================================== */
-.media-container, figure {
+.media-container {
     margin-top: 1rem;
     text-align: center;
 }
 
-.media-img, figure img {
+.media-img {
     max-width: 100%;
     height: auto;
     border-radius: 6px;
     border: 1px solid #33333d;
 }
 
-.media-caption, figcaption {
+.media-caption {
     font-size: 0.85rem;
     color: #a0a0b0;
     margin-top: 0.5rem;
@@ -144,7 +144,7 @@ article {
 /* ==========================================
    6. PIE DE PÁGINA (FOOTER)
    ========================================== */
-.site-footer, footer {
+.site-footer {
     background-color: #0a0a0c;
     padding: 1.5rem;
     text-align: center;
@@ -153,7 +153,7 @@ article {
     border-top: 1px solid #1e1e24;
 }
 
-footer ul {
+.footer-list {
     list-style: none;
     display: flex;
     justify-content: center;
@@ -161,7 +161,7 @@ footer ul {
     margin-top: 0.5rem;
 }
 
-footer a {
+.footer-link {
     color: #00e676;
     text-decoration: none;
 }
