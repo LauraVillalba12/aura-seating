@@ -13,6 +13,10 @@ body {
     font-family: 'Roboto', system-ui, -apple-system, sans-serif;
     font-size: 16px;
     line-height: 1.6;
+    /* Mantiene el footer pegado al fondo en monitores grandes */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ==========================================
@@ -54,7 +58,6 @@ h1, h2, h3, h4 {
     background-color: #1e1e24;
     padding: 1.5rem 2rem;
     border-bottom: 2px solid #00e676;
-    /* Criterio: Navbar flexible con distribución en extremos opuestos */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -90,7 +93,7 @@ h1, h2, h3, h4 {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 20px; /* Criterio: Espaciado con gap */
+    gap: 20px;
 }
 
 .nav-link {
@@ -110,9 +113,10 @@ h1, h2, h3, h4 {
    ========================================== */
 .main-content {
     padding: 2rem;
-    max-width: 1100px;
+    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-    /* Criterio: Contenedor principal flex con gap */
+    flex: 1; /* Estira el contenido para cubrir el espacio vertical libre */
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -122,13 +126,12 @@ h1, h2, h3, h4 {
     background-color: #1a1a20;
     padding: 1.5rem;
     border-radius: 8px;
-    /* Criterio: Secciones flex con gap */
     display: flex;
     flex-direction: column;
     gap: 16px;
+    border: 1px solid #282830;
 }
 
-/* Criterio: Box model con padding mínimo de 20px (1.5rem = 24px) */
 .card-article {
     background-color: #24242c;
     padding: 1.5rem;
@@ -153,11 +156,12 @@ h1, h2, h3, h4 {
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    width: 100%;
 }
 
 .media-img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%;  /* Ancho responsivo sin salirse del contenedor */
+    height: auto;     /* Mantiene la proporción original de la imagen sin recortar */
     border-radius: 6px;
     border: 1px solid #33333d;
 }
@@ -180,7 +184,8 @@ h1, h2, h3, h4 {
     gap: 12px;
     color: #a0a0b0;
     font-size: 0.9rem;
-    border-top: 1px solid #1e1e24;
+    border-top: 2px solid #00e676;
+    margin-top: auto;
 }
 
 .footer-list {
@@ -193,4 +198,78 @@ h1, h2, h3, h4 {
 .footer-link {
     color: #00e676;
     text-decoration: none;
+}
+
+/* ==========================================
+   7. RESPONSIVIDAD Y CSS GRID (ENTREGA 4)
+   ========================================== */
+
+/* --- Mobile First (Diseño Base) --- */
+.site-header {
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Grillas base en una sola columna */
+.grid-layout-index,
+.grid-layout-proyectos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* Asignación de áreas en Mobile */
+.area-welcome   { grid-area: welcome; }
+.area-hero      { grid-area: hero; }
+.area-propuesta { grid-area: propuesta; }
+.area-beneficios{ grid-area: beneficios; }
+
+.grid-layout-index {
+    grid-template-areas:
+        "welcome"
+        "hero"
+        "propuesta"
+        "beneficios";
+}
+
+.area-intro { grid-area: intro; }
+.area-card1 { grid-area: card1; }
+.area-card2 { grid-area: card2; }
+.area-media { grid-area: media; }
+
+.grid-layout-proyectos {
+    grid-template-areas:
+        "intro"
+        "card1"
+        "card2"
+        "media";
+}
+
+/* --- Breakpoint Desktop (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+    .site-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* Grilla bidimensional en Desktop para index.html */
+    .grid-layout-index {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "welcome    hero"
+            "propuesta  beneficios";
+    }
+
+    /* Grilla de 3 columnas para proyectos.html */
+    .grid-layout-proyectos {
+        grid-template-columns: 1fr 1fr 1.5fr;
+        grid-template-areas:
+            "intro intro intro"
+            "card1 card2 media";
+    }
 }
