@@ -28,3 +28,4 @@ Podés visitar el sitio web en línea a través del siguiente enlace:
 
 ## ✒️ Autor
 * **Proyecto desarrollado por Aura Seating**
+👉 **[Ver sitio en GitHub Pages](https://lauravillalba12.github.io/aura-seating/)**
