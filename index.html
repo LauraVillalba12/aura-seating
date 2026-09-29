@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Seating - Sillas Gamer y Ejecutivas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <!-- NAV BAR -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-success px-4 py-3">
+            <div class="container-fluid p-0">
+                <a class="navbar-brand brand-container" href="index.html">
+                    <img src="img/logo.jpg" alt="Logo Aura Seating" class="logo-img">
+                    <span class="brand-title">AURA SEATING</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAura">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarAura">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3 fs-5">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pages/sobre-mi.html">Sobre mí</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pages/servicios.html">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pages/proyectos.html">Proyectos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pages/contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        
+        <!-- BIENVENIDA -->
+        <section class="welcome-banner text-center my-4">
+            <h1 class="main-title">Bienvenidos a Aura Seating</h1>
+            <p class="welcome-text">
+                Especialistas en el diseño y distribución de sillas ergonómicas, creadas para mejorar el rendimiento gamer y el confort en largas jornadas de trabajo ejecutivas.
+            </p>
+        </section>
+
+        <!-- BANNER HERO CON SILLA ROSA DESTACADA -->
+        <section class="promo-hero my-5">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6 text-center text-lg-start ps-lg-5">
+                    <p class="promo-subtitle">EDICIÓN ESPECIAL AURA PRO</p>
+                    <h2 class="promo-title">6 CUOTAS SIN INTERÉS</h2>
+                    <p class="promo-discount">O <span>15% OFF</span> POR TRANSFERENCIA</p>
+                    <p class="promo-code mt-3">CÓDIGO PROMO: <strong>TRANSFE15</strong></p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <!-- Silla rosa colocada en el Hero principal -->
+                    <img src="img/image_93c523.jpg" alt="Silla Gamer Aura Pro Pink Series" class="img-fluid promo-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERÍA DE DETALLES ERGONÓMICOS (CAROUSEL DE BOOTSTRAP) -->
+        <section class="features-gallery my-5">
+            <h2 class="section-heading text-center mb-4">Detalles y Ergonomía de Excelencia</h2>
+            
+            <div id="carouselErgonomia" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselErgonomia" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselErgonomia" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselErgonomia" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselErgonomia" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                
+                <div class="carousel-inner bg-dark rounded border border-secondary text-center p-4">
+                    <div class="carousel-item active">
+                        <img src="img/imagenderecha.png" class="d-block mx-auto img-fluid" style="max-height: 350px;" alt="Perfil Aerodinámico">
+                        <div class="mt-3">
+                            <h5 class="text-success fw-bold">Perfil Aerodinámico</h5>
+                            <p class="text-light fs-6">Soporte lateral diseñado para posturas de alto rendimiento.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/imagendeespalda.png" class="d-block mx-auto img-fluid" style="max-height: 350px;" alt="Estructura Reforzada">
+                        <div class="mt-3">
+                            <h5 class="text-success fw-bold">Estructura Reforzada</h5>
+                            <p class="text-light fs-6">Chasis metálico que garantiza la mayor estabilidad.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/imagendeespacio.png" class="d-block mx-auto img-fluid" style="max-height: 350px;" alt="Soporte Lumbar Integrado">
+                        <div class="mt-3">
+                            <h5 class="text-success fw-bold">Soporte Lumbar Integrado</h5>
+                            <p class="text-light fs-6">Cuidado preciso para mantener la curvatura natural de la columna.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/Imagenapoyabrazo.png" class="d-block mx-auto img-fluid" style="max-height: 350px;" alt="Apoyabrazos Ajustables 3D">
+                        <div class="mt-3">
+                            <h5 class="text-success fw-bold">Apoyabrazos Ajustables 3D</h5>
+                            <p class="text-light fs-6">Ajuste de altura, ángulo y posición horizontal.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselErgonomia" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselErgonomia" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- INFORMACIÓN ORGANIZADA -->
+        <section class="info-grid my-5">
+            <div class="info-card">
+                <h2 class="card-title">Nuestra Propuesta</h2>
+                <p class="text-body">Buscamos ofrecer la mejor postura corporal cuidando la salud lumbar de nuestros usuarios a través de materiales de alta calidad y diseños ergonómicos vanguardistas.</p>
+            </div>
+            <div class="info-card">
+                <h2 class="card-title">Beneficios de Elegirnos</h2>
+                <ul class="text-body ps-3">
+                    <li class="mb-2">Diseño enfocado en la salud postural y descanso.</li>
+                    <li class="mb-2">Materiales resistentes de alta densidad.</li>
+                    <li>Garantía oficial y soporte técnico personalizado.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CATÁLOGOS DESTACADOS EN REJILLA -->
+        <section class="catalog-section my-5">
+            <h2 class="section-heading text-center">Catálogo Destacado</h2>
+            <div class="products-grid">
+                <div class="product-card bg-secondary-subtle">
+                    <div>
+                        <h3 class="card-title text-dark mb-1">AURA DRIFTING Series</h3>
+                        <p class="product-material mb-3">Silla Gamer Estilo Carrera</p>
+                        <ul class="text-dark ps-3">
+                            <li>Diseño Aerodinámico</li>
+                            <li>Edición Limitada Pro</li>
+                        </ul>
+                    </div>
+                    <div class="d-flex gap-2 mt-3">
+                        <button class="btn btn-dark btn-sm rounded-pill px-3">Funciones</button>
+                        <button class="btn btn-outline-dark btn-sm rounded-pill px-3">Especificación</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/imagenderecha.png" alt="Drifting Negro Blanco">
+                    </div>
+                    <div class="product-info mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="product-name m-0">Drifting Negro Blanco</h4>
+                            <span class="product-price">$869.090</span>
+                        </div>
+                        <p class="product-material m-0 mt-1">Cuero Sintético EPU™</p>
+                        <div class="mt-2">
+                            <span class="badge bg-secondary">Talle L</span>
+                            <span class="badge bg-success">En Stock XL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/imagendeespalda.png" alt="Sit Better Game Longer">
+                    </div>
+                    <div class="product-info mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="product-name m-0">Aura Executive Pro</h4>
+                            <span class="product-price">$938.590</span>
+                        </div>
+                        <p class="product-material m-0 mt-1">Cuero Sintético EPU™</p>
+                        <div class="mt-2">
+                            <span class="badge bg-success">En Stock L</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p class="m-0">&copy; 2026 Aura Seating. Todos los derechos reservados.</p>
+        <ul class="footer-list">
+            <li><a href="#" class="footer-link">Instagram</a></li>
+            <li><a href="#" class="footer-link">Facebook</a></li>
+        </ul>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
