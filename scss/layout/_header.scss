@@ -1,0 +1,48 @@
+@use "../utilities/variables" as *;
+
+.site-header, header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #0f172a; // Fondo oscuro elegante para la navegación
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 1rem;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+
+    .logo-img {
+        width: $tamano-logo !important;
+        height: $tamano-logo !important;
+        max-width: $tamano-logo !important;
+        max-height: $tamano-logo !important;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid $color-primario;
+    }
+
+    .brand-title {
+        font-family: $fuente-titulos;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: $color-primario;
+    }
+}
+
+// Estilos para los enlaces de navegación (Inicio, Sobre mí, Servicios, Proyectos, Contacto)
+.nav-link, .navbar-nav .nav-link {
+    color: #f1f5f9 !important; // Texto claro para la barra oscura
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+
+    &:hover, &.active {
+        color: $color-primario !important; // Cambia a verde neón al pasar el mouse o seleccionar
+    }
+}

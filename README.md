@@ -4,28 +4,28 @@ Bienvenido al repositorio oficial de **Aura Seating**, un sitio web enfocado en 
 
 ---
 
-##  Sitio Desplegado
+## 🌐 Sitio Desplegado
 Podés visitar el sitio web en línea a través del siguiente enlace:
-**[Ver sitio en GitHub Pages](https://TU-USUARIO.github.io/aura-seating/)**
+**[Ver sitio en GitHub Pages](https://lauravillalba12.github.io/aura-seating/)**
 
 ---
 
-##  Tecnologías Utilizadas
+## 🛠️ Tecnologías Utilizadas
 * **HTML5**: Estructura semántica.
-* **CSS3**: Estilos personalizados, gradientes y diseño adaptativo.
+* **SASS / CSS3**: Estilos personalizados, variables, parciales y diseño adaptativo.
 * **Bootstrap 5.3**: Framework responsivo, grillas y componentes (Navbar, Cards y Carousel).
 * **Git & GitHub**: Control de versiones y despliegue continuo.
 
 ---
 
-##  Estructura del Proyecto
+## 📁 Estructura del Proyecto
 * `index.html`: Página principal con banner promocional, carrusel de ergonomía y catálogo.
 * `pages/`: Secciones secundarias (`sobre-mi.html`, `servicios.html`, `proyectos.html`, `contacto.html`).
-* `styles/styles.css`: Hoja de estilos personalizada para sobreescribir Bootstrap y definir la paleta de colores.
+* `scss/`: Archivos fuente en SASS organizados por parciales (`base`, `components`, `layout`, `utilities`).
+* `styles/main.css`: Hoja de estilos compilada a partir de SASS.
 * `img/`: Carpeta con assets e imágenes del proyecto.
 
 ---
 
-##  Autor
-* **Proyecto desarrollado por Aura Seating**
- **[Ver sitio en GitHub Pages](https://lauravillalba12.github.io/aura-seating/)**
+## 👤 Autor
+* **Proyecto desarrollado por Aura Seating** - Laura Villalba

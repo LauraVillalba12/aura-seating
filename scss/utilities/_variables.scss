@@ -1,0 +1,20 @@
+// scss/utilities/_variables.scss
+
+// Paleta Pro Aura Seating
+$color-fondo: #f1f5f9;            // Gris claro moderno tenue
+$color-seccion-alt: #e2e8f0;       // Gris intermedio para alternar secciones
+$color-tarjeta: #ffffff;          // Blanco puro para hacer destacar las sillas
+$color-texto: #0f172a;            // Azul/Negro oscuro para legibilidad total
+$color-subtexto: #475569;         // Gris elegante para descripciones
+$color-texto-mutado: #475569;     // Necesario para _tipografia.scss
+$color-verde: #00e676;            // Verde neón de tu logo Aura
+$color-primario: #00e676;         // Necesario para componentes
+$color-secundario: #00b0ff;       // Azul secundario para _buttons.scss
+$color-verde-hover: #00c853;      // Verde más oscuro para botones en hover
+$color-borde: #cbd5e1;            // Bordes definidos pero suaves
+
+// Fuentes y medidas
+$fuente-titulos: 'Montserrat', sans-serif;
+$fuente-cuerpo: 'Roboto', sans-serif;
+$tamano-logo: 50px;
+$radio-borde: 14px;

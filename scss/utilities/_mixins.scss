@@ -1,0 +1,20 @@
+@use "variables" as *;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin tarjeta-estilo {
+  background-color: $color-tarjeta;
+  border: 1px solid $color-borde;
+  border-radius: $radio-borde;
+  padding: 1.5rem;
+}

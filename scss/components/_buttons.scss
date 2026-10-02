@@ -1,0 +1,22 @@
+@use "../utilities/variables" as *;
+
+body .btn-success {
+  background-color: $color-primario;
+  border-color: $color-primario;
+  color: #000000;
+  font-weight: 700;
+
+  &:hover {
+    background-color: $color-secundario;
+    border-color: $color-secundario;
+    color: #ffffff;
+  }
+}
+
+body .btn-dark {
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
