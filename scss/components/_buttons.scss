@@ -1,22 +1,55 @@
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
-body .btn-success {
-  background-color: $color-primario;
-  border-color: $color-primario;
-  color: #000000;
-  font-weight: 700;
-
-  &:hover {
-    background-color: $color-secundario;
-    border-color: $color-secundario;
-    color: #ffffff;
+// 1. Animación nativa CSS/SCSS con @keyframes
+@keyframes pulso-suave {
+  0% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
   }
 }
 
-body .btn-dark {
-  transition: opacity 0.3s ease;
+// 2. Clase Base para usar con @extend
+.btn-base {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-family: $fuente-cuerpo;
+  font-weight: 600;
+  border-radius: $radio-borde;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+// 3. Botón Principal (Aplica @extend y animación)
+.btn-primary, .btn-custom {
+  @extend .btn-base; // Uso obligatorio de @extend según consigna
+  background-color: $color-primario;
+  color: #0f172a;
 
   &:hover {
-    opacity: 0.85;
+    background-color: $color-primario;
+    transform: translateY(-2px);
+    animation: pulso-suave 1.5s infinite; // Animación nativa integrada
+  }
+}
+
+// 4. Botón Secundario (Aplica @extend)
+.btn-secondary {
+  @extend .btn-base;
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid $color-primario;
+
+  &:hover {
+    background-color: $color-primario;
+    color: #0f172a;
   }
 }

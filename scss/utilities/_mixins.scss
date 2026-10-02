@@ -1,20 +1,42 @@
-@use "variables" as *;
+// scss/utilities/_mixins.scss
 
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@mixin flex-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
+// --- MIXIN ANTERIOR (Mantenido para evitar errores) ---
 @mixin tarjeta-estilo {
-  background-color: $color-tarjeta;
-  border: 1px solid $color-borde;
-  border-radius: $radio-borde;
-  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+// --- NUEVOS MIXINS CON PARÁMETROS (Requisito Pre-entrega) ---
+
+// 1. Mixin con parámetro para Media Queries (Responsive)
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "tablet" {
+    @media (min-width: 768px) { @content; }
+  } @else if $breakpoint == "desktop" {
+    @media (min-width: 1024px) { @content; }
+  } @else if $breakpoint == "large" {
+    @media (min-width: 1200px) { @content; }
+  }
+}
+
+// 2. Mixin con parámetros para Flexbox centrado
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// 3. Mixin con parámetro para efectos de elevación/sombra
+@mixin tarjeta-sombra($hover-y: -6px) {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY($hover-y);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+  }
 }
