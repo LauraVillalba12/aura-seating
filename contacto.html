@@ -59,7 +59,7 @@
         <section class="content-section my-4" data-aos="fade-up">
             <h2 class="section-title text-center">Envíanos tu Mensaje</h2>
             <article class="card-article p-4">
-                <form action="#" method="POST" class="contact-form">
+                <form id="contactForm" class="contact-form">
                     <div class="form-group mb-3">
                         <label for="nombre" class="form-label text-body fw-bold">Nombre Completo:</label>
                         <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej: Laura Pérez" required>
@@ -91,6 +91,24 @@
         </section>
     </main>
 
+    <!-- Modal de Confirmación de Envío -->
+    <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="modalConfirmacionLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white border-bottom border-success">
+                    <h5 class="modal-title text-success fw-bold" id="modalConfirmacionLabel">Aura Seating</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <p class="text-dark fs-5 fw-medium m-0">Su consulta fue envia con exito</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-dark rounded-pill px-4" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="site-footer">
         <p class="m-0">&copy; 2026 Aura Seating. Todos los derechos reservados.</p>
         <ul class="footer-list">
@@ -103,6 +121,18 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({ duration: 800, once: true });
+
+      // Evento para capturar el envío del formulario
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Abre la ventana flotante (modal)
+          const modal = new bootstrap.Modal(document.getElementById('modalConfirmacion'));
+          modal.show();
+          
+          // Resetea los campos del formulario
+          this.reset();
+      });
     </script>
 </body>
 
