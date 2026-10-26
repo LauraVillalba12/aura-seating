@@ -1,0 +1,23 @@
+# Dependencias
+node_modules/
+
+# Archivos temporales de Sass / Live Sass Compiler
+.sass-cache/
+*.css.map
+
+# Configuración local del editor
+.vscode/
+.idea/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs y variables de entorno
+*.log
+.env
+
+# Carpetas de despliegue locales
+.vercel/
+.netlify/

@@ -1,18 +1,23 @@
-// 1. Utilidades (Variables y Mixins)
-@use "utilities/variables" as *;
-@use "utilities/mixins" as *;
+// ==========================================================
+// scss/main.scss
+// Archivo exclusivo de importación de partials con @use
+// ==========================================================
 
-// 2. Estilos Base
+// 1. Base
 @use "base/base";
 @use "base/tipografia";
+@use "base/animaciones";
 
-// 3. Maquetación (Layout)
+// 2. Layout (cabecera y navegación)
 @use "layout/header";
 @use "layout/nav";
-@use "layout/footer";
 
-// 4. Componentes Reutilizables
+// 3. Componentes
 @use "components/buttons";
 @use "components/cards";
 @use "components/carousel";
 @use "components/forms";
+@use "components/media";
+
+// 4. Footer (siempre al final de todo)
+@use "layout/footer";

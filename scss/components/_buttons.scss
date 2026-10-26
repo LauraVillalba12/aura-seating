@@ -1,55 +1,96 @@
+// ==========================================================
+// scss/components/_buttons.scss
+// Botones con @extend y animación nativa
+// ==========================================================
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
-// 1. Animación nativa CSS/SCSS con @keyframes
-@keyframes pulso-suave {
-  0% {
-    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.5);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
-  }
-}
-
-// 2. Clase Base para usar con @extend
-.btn-base {
+// Placeholder base para usar con @extend
+%btn-base {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
+  padding: ($espaciado * 0.75) ($espaciado * 1.5);
   font-family: $fuente-cuerpo;
   font-weight: 600;
-  border-radius: $radio-borde;
+  border-radius: $radio-borde * 0.5;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
+  transition: transform $transicion, background-color $transicion, color $transicion;
 }
 
-// 3. Botón Principal (Aplica @extend y animación)
-.btn-primary, .btn-custom {
-  @extend .btn-base; // Uso obligatorio de @extend según consigna
+// Botón principal
+.btn-primary,
+.btn-custom {
+  @extend %btn-base;
+  --bs-btn-bg: #{$color-primario};
+  --bs-btn-border-color: #{$color-primario};
+  --bs-btn-hover-bg: #{$color-primario-hover};
+  --bs-btn-hover-border-color: #{$color-primario-hover};
+  --bs-btn-active-bg: #{$color-primario-hover};
+  --bs-btn-active-border-color: #{$color-primario-hover};
+  --bs-btn-color: #{$color-oscuro};
+  --bs-btn-hover-color: #{$color-oscuro};
+  --bs-btn-active-color: #{$color-oscuro};
   background-color: $color-primario;
-  color: #0f172a;
+  color: $color-oscuro;
 
-  &:hover {
-    background-color: $color-primario;
+  &:hover,
+  &:focus-visible {
     transform: translateY(-2px);
-    animation: pulso-suave 1.5s infinite; // Animación nativa integrada
+    animation: pulso-suave 1.5s infinite; // animación @keyframes
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.97);
+    animation: none;
   }
 }
 
-// 4. Botón Secundario (Aplica @extend)
+// Botón secundario
 .btn-secondary {
-  @extend .btn-base;
+  @extend %btn-base;
   background-color: transparent;
-  color: #ffffff;
+  color: $color-blanco;
   border: 2px solid $color-primario;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background-color: $color-primario;
-    color: #0f172a;
+    color: $color-oscuro;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+// Botones de Bootstrap del sitio (productos, modales)
+.btn-dark,
+.btn-outline-dark {
+  transition: transform $transicion, background-color $transicion, box-shadow $transicion;
+
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 0.2rem $sombra-verde;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+// Botón de cerrar de los modales
+.btn-close {
+  transition: transform $transicion, opacity $transicion;
+
+  &:hover,
+  &:focus {
+    transform: rotate(90deg);
+    opacity: 1;
+  }
+
+  &:active {
+    transform: rotate(90deg) scale(0.9);
   }
 }

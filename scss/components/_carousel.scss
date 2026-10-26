@@ -1,77 +1,102 @@
+// ==========================================================
+// scss/components/_carousel.scss
+// Carrusel de Bootstrap personalizado
+// ==========================================================
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
-// Contenedor principal del carrusel
 .carousel {
   border-radius: $radio-borde;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px $sombra-fuerte;
 }
 
-// Caja de texto debajo de la imagen
-.carousel-caption {
-  position: relative;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  padding: 1rem 1.5rem 1.5rem;
-  background: transparent;
+.carousel-inner {
+  background-color: $color-oscuro;
+  border: 1px solid $color-subtexto;
+  border-radius: $radio-borde;
+  text-align: center;
+  padding: ($espaciado * 1.5) $espaciado ($espaciado * 2.5);
 
-  // Título de cada diapositiva (Verde Neón)
-  h5, .carousel-title {
-    color: $color-primario !important;
-    font-family: $fuente-titulos;
-    font-size: 1.25rem !important;
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-    letter-spacing: -0.01em;
+  @include respond-to(tablet) {
+    padding: ($espaciado * 1.5) ($espaciado * 4) ($espaciado * 2.5);
+  }
+}
+
+.carousel-img {
+  @include imagen-limitada(240px);
+  display: block;
+  margin: 0 auto;
+
+  @include respond-to(tablet) {
+    max-height: 350px;
+  }
+}
+
+.carousel-texto {
+  margin-top: $espaciado;
+
+  h3 {
+    color: $color-primario;
+    font-size: $fuente-base * 1.25;
+    margin-bottom: $espaciado * 0.4;
   }
 
-  // Descripción que no se leía (Blanco puro, compacto y legible)
-  p, .carousel-description {
-    color: #ffffff !important;
-    font-family: $fuente-cuerpo;
-    font-size: 0.95rem !important;
-    font-weight: 400;
-    line-height: 1.4;
+  p {
+    color: $color-blanco;
+    font-size: $fuente-base * 0.95;
     max-width: 650px;
     margin: 0 auto;
   }
 }
 
-// Flechas de navegación (Anterior / Siguiente)
 .carousel-control-prev,
 .carousel-control-next {
-  width: 5%;
+  width: 10%;
   opacity: 0.85;
+  transition: opacity $transicion;
 
-  &:hover {
+  @include respond-to(tablet) {
+    width: 6%;
+  }
+
+  &:hover,
+  &:focus {
     opacity: 1;
   }
 
-  // Iconos de las flechas destacados en verde o blanco bien visible
+  &:active {
+    opacity: 0.6;
+  }
+
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
     width: 2rem;
     height: 2rem;
-    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 2px 4px $sombra-fuerte);
   }
 }
 
-// Indicadores inferiores (los guiones/puntos de la diapositiva)
 .carousel-indicators {
-  margin-bottom: 0.5rem;
+  margin-bottom: $espaciado * 0.5;
 
-  button {
-    background-color: #ffffff !important;
+  [data-bs-target] {
+    background-color: $color-blanco;
     opacity: 0.4;
     width: 24px;
     height: 3px;
     border-radius: 2px;
+    transition: width $transicion, opacity $transicion;
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
 
     &.active {
-      background-color: $color-primario !important;
+      background-color: $color-primario;
       opacity: 1;
-      width: 32px;
+      width: 24px * 1.5;
     }
   }
 }

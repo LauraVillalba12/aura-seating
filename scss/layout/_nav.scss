@@ -1,19 +1,81 @@
+// ==========================================================
+// scss/layout/_nav.scss
+// Navbar de Bootstrap estilada con la identidad de Aura
+// ==========================================================
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
 .site-header {
   .navbar {
-    .nav-link {
-      color: $color-texto;
-      font-size: 1rem;
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      transition: color 0.3s ease;
+    background-color: $color-oscuro;
+    border-bottom: 2px solid $color-primario;
+    padding: ($espaciado * 0.75) $espaciado;
 
-      &:hover,
-      &.active {
-        color: $color-primario;
-        font-weight: 500;
+    @include respond-to(tablet) {
+      padding: ($espaciado * 0.75) ($espaciado * 2);
+    }
+  }
+
+  // Botón hamburguesa
+  .navbar-toggler {
+    border: 2px solid $color-primario;
+    padding: 0.35rem 0.6rem;
+    transition: box-shadow $transicion, transform $transicion;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0 0.2rem $sombra-verde;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  // Menú desplegado (hamburguesa) en mobile y tablet
+  .navbar-collapse {
+    @include respond-to(menu-colapsado) {
+      background-color: $color-oscuro-alt;
+      border-radius: $radio-borde;
+      margin-top: $espaciado * 0.75;
+      padding: $espaciado * 0.5;
+    }
+  }
+
+  .nav-link {
+    color: $color-fondo;
+    font-family: $fuente-titulos;
+    font-size: $fuente-base * 1.05;
+    font-weight: 600;
+    padding: ($espaciado * 0.5) $espaciado;
+    position: relative;
+    transition: color $transicion, transform $transicion;
+
+    // Subrayado animado (transition nativa)
+    &::after {
+      content: "";
+      position: absolute;
+      left: $espaciado;
+      bottom: 0.2rem;
+      width: 0;
+      height: 2px;
+      background-color: $color-primario;
+      transition: width $transicion;
+    }
+
+    &:hover,
+    &:focus,
+    &.active {
+      color: $color-primario;
+
+      &::after {
+        width: calc(100% - #{$espaciado * 2});
       }
+    }
+
+    &:active {
+      color: $color-primario-hover;
+      transform: scale(0.97);
     }
   }
 }

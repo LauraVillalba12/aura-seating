@@ -1,0 +1,77 @@
+// ==========================================================
+// scss/components/_media.scss
+// Imágenes, figuras, promo y modales (reemplaza estilos inline)
+// ==========================================================
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+// Imágenes de figuras con tamaños según el contexto
+.media-img {
+  @include imagen-limitada(260px);
+  border-radius: $radio-borde * 0.5;
+  border: 1px solid $color-borde;
+
+  @include respond-to(tablet) {
+    max-height: 400px;
+  }
+
+  &--lg {
+    @include respond-to(desktop) {
+      max-height: 450px;
+    }
+  }
+}
+
+.media-caption {
+  color: $color-texto-mutado;
+  font-weight: 600;
+  margin-top: $espaciado * 0.5;
+}
+
+// Banner promocional del index
+.promo-hero {
+  .promo-subtitle {
+    color: $color-primario-hover;
+    letter-spacing: 0.1em;
+  }
+
+  .promo-title {
+    color: $color-texto;
+  }
+
+  .promo-discount span {
+    color: $color-primario-hover;
+    font-weight: 700;
+  }
+
+  .promo-img {
+    @include imagen-limitada(280px);
+    border-radius: $radio-borde;
+
+    @include respond-to(desktop) {
+      max-height: 380px;
+    }
+  }
+}
+
+// Modales
+.modal-header {
+  background-color: $color-oscuro;
+  border-bottom: 2px solid $color-primario;
+
+  .modal-title {
+    color: $color-primario;
+  }
+}
+
+.modal-img {
+  @include imagen-limitada(300px);
+  border-radius: $radio-borde * 0.5;
+  border: 1px solid $color-borde;
+}
+
+.modal-subtitulo {
+  color: $color-primario-hover;
+  font-size: $fuente-base * 1.25;
+  margin-top: $espaciado * 1.5;
+}

@@ -1,21 +1,32 @@
+// ==========================================================
+// scss/components/_forms.scss
+// Formulario de contacto
+// ==========================================================
 @use "sass:color";
 @use "../utilities/variables" as *;
 
 .contact-form {
+  .form-label {
+    font-weight: 600;
+    color: $color-texto;
+  }
+
   .form-control {
-    background-color: color.adjust($color-fondo, $lightness: 5%);
+    background-color: color.adjust($color-fondo, $lightness: 3%);
     border: 1px solid $color-borde;
     color: $color-texto;
+    transition: border-color $transicion, box-shadow $transicion;
 
-    &:focus {
-      background-color: color.adjust($color-fondo, $lightness: 8%);
+    &:hover {
+      border-color: $color-primario-hover;
+    }
+
+    &:focus,
+    &:active {
+      background-color: $color-tarjeta;
       border-color: $color-primario;
-      box-shadow: 0 0 0 0.25rem rgba($color-primario, 0.25);
+      box-shadow: 0 0 0 0.25rem $sombra-verde;
       color: $color-texto;
     }
   }
-}
-
-.form-label {
-  font-weight: 500;
 }

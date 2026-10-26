@@ -1,41 +1,51 @@
+// ==========================================================
+// scss/layout/_footer.scss
+// Pie de página (se importa al final de main.scss)
+// ==========================================================
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
-footer, .site-footer {
-  background-color: #0f172a;
-  color: #f1f5f9;
-  padding: 2rem 1rem 1.5rem;
+.site-footer {
+  background-color: $color-oscuro;
+  border-top: 2px solid $color-primario;
+  padding: ($espaciado * 2) $espaciado ($espaciado * 1.5);
+  margin-top: $espaciado * 3;
   text-align: center;
+  @include flex-center(column, center, center, $espaciado);
 
-  // Remueve viñetas/puntos en todo el footer
-  ul {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 0 1rem 0 !important;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-
-  li {
-    list-style: none !important;
-  }
-
-  a {
-    color: $color-primario;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.05rem;
-    transition: all 0.2s ease;
-
-    &:hover {
-      color: #ffffff;
-      text-decoration: underline;
-    }
+  @include respond-to(tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: ($espaciado * 1.5) ($espaciado * 3);
   }
 
   p {
-    color: #94a3b8;
-    font-size: 0.88rem;
+    color: $color-borde;
+    font-size: $fuente-base * 0.88;
     margin: 0;
+  }
+
+  .footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include flex-center(row, center, center, $espaciado * 1.5);
+  }
+
+  .footer-link {
+    color: $color-primario;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color $transicion;
+
+    &:hover,
+    &:focus {
+      color: $color-blanco;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: $color-primario-hover;
+    }
   }
 }
