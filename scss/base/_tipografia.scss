@@ -1,24 +1,44 @@
+// ==========================================================
+// scss/base/_tipografia.scss
+// Jerarquía tipográfica responsiva
+// ==========================================================
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
-h1, h2, h3, h4, h5, h6, .brand-title {
+h1, h2, h3, h4, h5, h6,
+.brand-title {
   font-family: $fuente-titulos;
   font-weight: 700;
   color: $color-texto;
 }
 
 .main-title {
-  font-size: 2.2rem;
+  font-size: $fuente-base * 1.75;   // 28px en mobile
   color: $color-primario;
-  margin-bottom: 1rem;
+  margin-bottom: $espaciado;
+  text-shadow: 0 2px 10px rgba($color-primario, 0.2);
+
+  @include respond-to(tablet) {
+    font-size: $fuente-base * 2.2;
+  }
+
+  @include respond-to(desktop) {
+    font-size: $fuente-base * 2.6;
+  }
 }
 
-.section-title, .section-heading {
-  font-size: 1.8rem;
+.section-title,
+.section-heading {
+  font-size: $fuente-base * 1.5;
   color: $color-texto;
-  margin-bottom: 1.5rem;
+  margin-bottom: $espaciado * 1.5;
+
+  @include respond-to(tablet) {
+    font-size: $fuente-base * 1.8;
+  }
 }
 
 .text-body {
-  color: $color-texto-mutado;
-  font-size: 1rem;
+  color: $color-subtexto;
+  font-size: $fuente-base;
 }

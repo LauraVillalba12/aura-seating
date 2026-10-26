@@ -1,29 +1,42 @@
+// ==========================================================
+// scss/components/_cards.scss
+// Tarjetas, grillas de productos e información
+// ==========================================================
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
-.card-article,
-.info-card {
+// Placeholder compartido (@extend)
+%tarjeta-base {
   @include tarjeta-estilo;
-  margin-bottom: 1.5rem;
+  @include tarjeta-sombra(-6px);
   color: $color-texto;
 }
 
+.card-article,
+.info-card {
+  @extend %tarjeta-base;
+  margin-bottom: $espaciado * 1.5;
+}
+
+.card {
+  @extend %tarjeta-base;
+}
+
 .product-card {
-  @include tarjeta-estilo;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @extend %tarjeta-base;
+  @include flex-center(column, space-between, stretch);
 
   .product-img-wrap {
     width: 100%;
-    height: 260px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.04);
+    height: 220px;
+    @include flex-center;
+    background-color: rgba($color-oscuro, 0.04);
     border-radius: $radio-borde;
-    margin-bottom: 1rem;
+    margin-bottom: $espaciado;
+
+    @include respond-to(tablet) {
+      height: 260px;
+    }
 
     img {
       max-width: 100%;
@@ -33,20 +46,31 @@
   }
 
   .product-price {
-    font-size: 1.25rem;
+    font-size: $fuente-base * 1.25;
     font-weight: 700;
-    color: $color-primario;
+    color: $color-primario-hover;
   }
 
   .product-material {
     color: $color-texto-mutado;
-    font-size: 0.9rem;
+    font-size: $fuente-base * 0.9;
   }
 }
 
+// Grillas responsivas (1 col mobile, 2 tablet, 3 desktop)
 .products-grid,
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: $espaciado * 1.5;
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.products-grid {
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

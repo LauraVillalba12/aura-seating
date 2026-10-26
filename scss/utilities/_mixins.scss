@@ -1,42 +1,65 @@
+// ==========================================================
 // scss/utilities/_mixins.scss
+// Mixins con parámetros reutilizables en todo el proyecto
+// ==========================================================
+@use "sass:math";
+@use "variables" as *;
 
-// --- MIXIN ANTERIOR (Mantenido para evitar errores) ---
-@mixin tarjeta-estilo {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: #ffffff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-// --- NUEVOS MIXINS CON PARÁMETROS (Requisito Pre-entrega) ---
-
-// 1. Mixin con parámetro para Media Queries (Responsive)
+// 1. Media queries propias (mobile first)
+//    Uso: @include respond-to(tablet) { ... }
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == "tablet" {
-    @media (min-width: 768px) { @content; }
-  } @else if $breakpoint == "desktop" {
-    @media (min-width: 1024px) { @content; }
-  } @else if $breakpoint == "large" {
-    @media (min-width: 1200px) { @content; }
+  @if $breakpoint == tablet {
+    @media (min-width: $bp-tablet) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (min-width: $bp-desktop) { @content; }
+  } @else if $breakpoint == large {
+    @media (min-width: $bp-large) { @content; }
+  } @else if $breakpoint == mobile {
+    @media (max-width: ($bp-tablet - 1px)) { @content; } // operador matemático
+  } @else if $breakpoint == menu-colapsado {
+    @media (max-width: ($bp-navbar - 0.02px)) { @content; }
   }
 }
 
-// 2. Mixin con parámetros para Flexbox centrado
-@mixin flex-center($direction: row, $justify: center, $align: center) {
+// 2. Flexbox con parámetros
+@mixin flex-center($direction: row, $justify: center, $align: center, $gap: 0) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
+  gap: $gap;
 }
 
-// 3. Mixin con parámetro para efectos de elevación/sombra
-@mixin tarjeta-sombra($hover-y: -6px) {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+// 3. Estilo base de tarjeta con parámetros
+@mixin tarjeta-estilo($fondo: $color-tarjeta, $borde: $color-borde, $radio: $radio-borde) {
+  background-color: $fondo;
+  border: 2px solid $borde;
+  border-radius: $radio;
+  overflow: hidden;
+}
 
-  &:hover {
+// 4. Elevación con animación al hover (transition nativa)
+@mixin tarjeta-sombra($hover-y: -6px, $color-hover: $color-primario) {
+  box-shadow: 0 4px 15px $sombra-base;
+  transition: transform $transicion, box-shadow $transicion, border-color $transicion;
+
+  &:hover,
+  &:focus-within {
     transform: translateY($hover-y);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+    border-color: $color-hover;
+    box-shadow: 0 12px 25px $sombra-verde;
   }
+
+  &:active {
+    transform: translateY(math.div($hover-y, 2)); // operador matemático
+    box-shadow: 0 6px 12px $sombra-base;
+  }
+}
+
+// 5. Imagen limitada en altura (reemplaza estilos inline)
+@mixin imagen-limitada($alto-max: 350px) {
+  max-height: $alto-max;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
 }
