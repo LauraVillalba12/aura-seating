@@ -87,6 +87,24 @@ Diseño *mobile first* con media queries propias generadas desde el mixin `respo
 
 ---
 
+## ✅ Correcciones aplicadas (devoluciones de pre-entregas)
+
+| Pre-entrega | Devolución | Corrección aplicada |
+|---|---|---|
+| 6 | Imagen faltante en `index.html` | Todas las rutas apuntan a `assets/img/` (y `../assets/img/` desde `pages/`). 0 recursos rotos. |
+| 6 | Placeholders en el README | README reescrito con datos reales del proyecto y del deploy. |
+| 7 | Colores hardcodeados en `_header.scss` y `_footer.scss` | Reemplazados por variables de `_variables.scss` (`$color-oscuro`, `$color-primario`, `$sombra-fuerte`, etc.). |
+| 7 | Footer al final en SASS | `@use "layout/footer";` es la última línea de `main.scss`. |
+| 7 / 8 | Rutas de carpetas en el README | La estructura documentada coincide con la real: `index.html` en la raíz y 4 HTML en `pages/`. |
+| 8 | Usar los mixins con parámetros para el responsive | `respond-to()` se invoca en 7 partials (header, nav, footer, tipografía, cards, carousel y media); también se usan `flex-center()`, `imagen-limitada()`, `tarjeta-estilo()` y `tarjeta-sombra()`. |
+| 8 | Operadores matemáticos SCSS | `$espaciado * 2`, `$fuente-base * 1.5`, `$bp-tablet - 1px`, `math.div()`. |
+| 8 | Archivo `.gitignore` | Agregado (excluye `node_modules/`, `.sass-cache/`, `*.css.map`, `.vscode/`, etc.). |
+| 9 | Imágenes huérfanas en `img/` | Eliminadas 6 imágenes sin uso; las 11 restantes están en `assets/img/` y optimizadas. |
+| 9 | Open Graph en todas las páginas | `og:title`, `og:description`, `og:image`, `og:url`, `og:type`, `og:locale` y `og:site_name` en las 5 páginas. |
+| 9 | Jerarquía de encabezados | Un solo `<h1>` por página; los títulos de modales pasaron de `h5`/`h6` a `h2`/`h3`. |
+
+---
+
 ## ⚙️ Cómo compilar el SCSS
 
 Con la extensión **Live Sass Compiler** de VS Code (configurada para guardar en `styles/`) o por terminal:
